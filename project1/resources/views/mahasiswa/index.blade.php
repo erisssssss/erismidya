@@ -43,7 +43,7 @@
                     <tr>
                         <td>{{$nomor++}}</td>
                         <td>{{$item->kode}}</td>
-                        <td>{{$item->jurusan}}</td>
+                        <td>{{$item->jurusans->jurusan}}</td>
                         <td>
                             <a href="/mahasiswa/edit/{{$item->id}}" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
 
