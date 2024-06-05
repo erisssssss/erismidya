@@ -1,12 +1,12 @@
 @extends('layouts.master')
-@section('title','Data Jurusan')
-@section('heading','Data Jurusan')
+@section('title','Data Mahasiswa')
+@section('heading','Data Mahasiswa')
 
 @section('bc')
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item active">Data Jurusan</li>
+        <li class="breadcrumb-item active">Data Mahasiswa</li>
         </ol>
     </div>
 @endsection
@@ -15,7 +15,7 @@
     <div class="card">
         <div class="card-header">
         <h3 class="card-title">
-            <a href="/jurusan/form/" class="btn btn-primary"><i class="fa fa-folder-plus"></i> Tambah Data</a>
+        <a href="/mahasiswa/form/" class="btn btn-primary"><i class="fa fa-folder-plus"></i> Tambah Data</a>
         </h3>
 
         <div class="card-tools">
@@ -32,8 +32,9 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Kode Jurusan</th>
-                        <th>Nama Jurusan</th>
+                        <<th>NIM</th>
+                        <th>Nama Lengkap</th>
+                        <th>Jurusan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -44,7 +45,7 @@
                         <td>{{$item->kode}}</td>
                         <td>{{$item->jurusan}}</td>
                         <td>
-                            <a href="/jurusan/edit/{{$item->id}}" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
+                            <a href="/mahasiswa/edit/{{$item->id}}" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
 
                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#hapus{{$item->id}}">
                                 <i class="fa fa-trash"></i>
@@ -58,11 +59,11 @@
                                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Yakin Data Jurusan {{$item->jurusan}} di Hapus?
+                                        Yakin Data Mahasiswa {{$item->jurusan}} di Hapus?
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                    <form action="/jurusan/{{$item->id}}" method="post">
+                                    <form action="/mahasiswa/{{$item->id}}" method="post">
                                         @method('DELETE')
                                         @csrf
                                         <button type="submit" class="btn btn-primary">Hapus</button>
