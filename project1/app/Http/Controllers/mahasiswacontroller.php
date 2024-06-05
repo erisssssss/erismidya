@@ -21,7 +21,8 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        $jur = Jurusan::all();
+        return view('mahasiswa.form',compact('jur'));
     }
 
     /**
