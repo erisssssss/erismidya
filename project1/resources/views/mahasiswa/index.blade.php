@@ -32,17 +32,18 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <<th>NIM</th>
+                        <th>NIM</th>
                         <th>Nama Lengkap</th>
                         <th>Jurusan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($jur as $item)
+                    @forelse ($mhs as $item)
                     <tr>
                         <td>{{$nomor++}}</td>
-                        <td>{{$item->kode}}</td>
+                        <td>{{$item->nim}}</td>
+                        <td>{{$item->nama}}</td>
                         <td>{{$item->jurusans->jurusan}}</td>
                         <td>
                             <a href="/mahasiswa/edit/{{$item->id}}" class="btn btn-info btn-sm"><i class="fa fa-pencil-alt"></i></a>
